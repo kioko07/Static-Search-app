@@ -1,0 +1,21 @@
+const search = () =>{
+const searchBox = document.getElementById('search').value.toUpperCase();
+const all = document.getElementById('products')
+const list = document.querySelectorAll('.products')
+const item = all.getElementsByTagName('p')
+
+for(var i=0; i < item.length; i++){
+    let match = list[i].getElementsByTagName('p')[0];
+
+    if(match){
+      let textValue = match.textContent || match.innerHTML
+
+      if(textValue.toUpperCase().indexOf(searchBox) > -1){
+        list[i].style.display = "";
+      }else{
+        list[i].style.display = "none";
+      }
+    };
+};
+
+};
